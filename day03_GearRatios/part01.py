@@ -9,7 +9,7 @@
 # ...$.*....
 # .664.598.."""
 
-with open('F:\\Projects\\AdventOfCode\\day03_GearRatios\\data.txt', 'r') as file:
+with open('data.txt', 'r') as file:
     input_data = file.read()
 
 temp_lines = input_data.splitlines()
