@@ -5,18 +5,18 @@
 # Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
 # Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11"""
 
-with open('F:\\Projects\\AdventOfCode\\day04_Scratchcards\\data.txt', 'r') as file:
+with open('data.txt', 'r') as file:
     input_data = file.read()
 
-separete_lines = input_data.splitlines()
-game_lines = [line.split(":")[1].strip() for line in separete_lines]
-game_cards = [card.split("|") for card in game_lines]
-cards = [[card.strip().split(" ") for card in card] for card in game_cards]
+lines = input_data.splitlines()
+lines_cards = [line.split(":")[1].strip() for line in lines]
+game_cards = [card.split("|") for card in lines_cards]
+cards = [[list(filter(None, item.strip().split(" "))) for item in card] for card in game_cards]
+print(cards)
 score = 0
 
 for game in cards:
     winning_cards = len(list(set(game[0]).intersection(game[1])))
-    print(winning_cards)
     if winning_cards > 0:
         score += 2**(winning_cards-1)
 
