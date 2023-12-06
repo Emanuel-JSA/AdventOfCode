@@ -12,7 +12,7 @@ lines = input_data.splitlines()
 lines_cards = [line.split(":")[1].strip() for line in lines]
 game_cards = [card.split("|") for card in lines_cards]
 cards = [[list(filter(None, item.strip().split(" "))) for item in card] for card in game_cards]
-print(cards)
+
 score = 0
 
 for game in cards:
